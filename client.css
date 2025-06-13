@@ -1,0 +1,388 @@
+/* client.css */
+
+/* Estilos básicos */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f0f2f5;
+    color: #333;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #007bff;
+    margin-bottom: 30px;
+    font-size: 2.5em;
+    border-bottom: 2px solid #e9ecef;
+    padding-bottom: 15px;
+}
+
+/* Nova Seção de Busca de Cupom */
+.search-coupon-section {
+    padding: 20px 0;
+    text-align: center;
+}
+
+.search-coupon-section .form-group {
+    margin-bottom: 20px;
+}
+
+.search-coupon-section label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #555;
+}
+
+.search-coupon-section input[type="text"] {
+    width: 60%; /* Ajusta largura do input */
+    max-width: 400px; /* Largura máxima para o input */
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1.1em;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+.search-coupon-section input[type="text"]:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.2);
+}
+
+.search-coupon-section .btn.primary {
+    padding: 12px 30px;
+    font-size: 1.1em;
+    border-radius: 8px;
+}
+
+.search-message {
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.search-message.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.search-message.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* Contêiner para o Cupom Encontrado */
+.found-coupon-container {
+    margin-top: 30px;
+    padding: 20px;
+    text-align: center; /* Centraliza o card se estiver sozinho */
+    display: flex; /* Para centralizar o card */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    min-height: 250px; /* Garante altura mínima para a seção */
+}
+
+.initial-message {
+    color: #777;
+    font-style: italic;
+    font-size: 1.1em;
+    padding: 20px;
+    width: 100%; /* Ocupa a largura total para centralizar */
+}
+
+/* Separador */
+hr {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0));
+    margin: 30px 0;
+}
+
+
+/* Estilo do Card do Cupom (mantido e ajustado para display individual) */
+.coupon-card {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 200px;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    text-align: center;
+    width: 100%; /* Ocupa a largura total do found-coupon-container */
+    max-width: 350px; /* Limite a largura para que não seja muito grande */
+    margin: 0 auto; /* Centraliza o card */
+}
+
+.coupon-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.coupon-card h2 {
+    font-size: 1.6em;
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.coupon-card p {
+    font-size: 1.1em;
+    color: #555;
+    line-height: 1.5;
+    flex-grow: 1;
+    margin-bottom: 15px;
+}
+
+.coupon-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 15px 0 20px 0;
+    text-align: left;
+    font-size: 0.95em;
+    color: #444;
+}
+
+.coupon-card ul li {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.coupon-card ul li::before {
+    content: '🎁';
+    margin-right: 8px;
+    font-size: 1.1em;
+}
+
+/* Estilos de cor para os cards */
+.coupon-card.normal { background-color: #e0f2f7; border-color: #a7d9ef; }
+.coupon-card.rara { background-color: #f3e5f5; border-color: #ce93d8; }
+.coupon-card.lendaria { background-color: #fffde7; border-color: #ffd700; }
+.coupon-card.mistico { background-color: #ffebee; border-color: #ef9a9a; }
+
+/* Ajuste para o botão que abre o modal */
+.open-modal-btn {
+    display: block;
+    width: 100%;
+    padding: 12px 0;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: auto;
+}
+
+.open-modal-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Estilos para cupons resgatados */
+.coupon-card.redeemed {
+    opacity: 0.6;
+    border-color: #a0a0a0;
+    background-color: #f0f0f0;
+    cursor: default;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    text-decoration: line-through;
+}
+
+.coupon-card.redeemed:hover {
+    transform: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.coupon-card.redeemed h2,
+.coupon-card.redeemed p,
+.coupon-card.redeemed ul li {
+    color: #888;
+}
+
+.coupon-card.redeemed .open-modal-btn {
+    background-color: #6c757d;
+    cursor: default;
+    opacity: 0.8;
+}
+
+.coupon-card.redeemed .open-modal-btn:hover {
+    background-color: #6c757d;
+}
+
+/* Responsividade básica */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+    .search-coupon-section input[type="text"] {
+        width: 80%;
+    }
+    .found-coupon-container {
+        padding: 10px;
+    }
+}
+
+
+/* --- ESTILOS DO MODAL --- */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 30px;
+    border: 1px solid #888;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    position: relative;
+    animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 30px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    cursor: pointer;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: #333;
+    text-decoration: none;
+}
+
+.modal-content h2 {
+    color: #007bff;
+    text-align: center;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+.modal-content p {
+    text-align: center;
+    font-size: 1.1em;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.modal-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 15px 0 20px 0;
+    text-align: left;
+}
+
+.modal-content ul li {
+    background-color: #f5f5f5;
+    padding: 8px 15px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    font-size: 0.95em;
+}
+
+/* Mensagens do Modal (sucesso/erro) */
+.modal-message {
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.modal-message.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.modal-message.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* Botões do modal */
+.modal-content .btn {
+    width: calc(50% - 10px);
+    margin: 10px 5px;
+    padding: 12px 15px;
+    font-size: 1.1em;
+}
+
+.modal-content .btn.primary {
+    background-color: #28a745;
+}
+.modal-content .btn.primary:hover {
+    background-color: #218838;
+}
+
+.modal-content .btn.secondary {
+    background-color: #dc3545;
+}
+.modal-content .btn.secondary:hover {
+    background-color: #c82333;
+}
+
+/* Responsividade para o modal */
+@media (max-width: 600px) {
+    .modal-content {
+        width: 95%;
+        padding: 20px;
+    }
+    .modal-content .btn {
+        width: 100%;
+        margin: 8px 0;
+    }
+    .search-coupon-section input[type="text"] {
+        width: 95%;
+    }
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resgate de Cupons</title>
+    <link rel="stylesheet" href="client.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Resgate de Cupons</h1>
+
+        <div class="search-coupon-section">
+            <div class="form-group">
+                <label for="globalRedeemCodeInput">Digite o Código do Cupom:</label>
+                <input type="text" id="globalRedeemCodeInput" placeholder="Ex: CUPOM123">
+            </div>
+            <button class="btn primary" id="searchCouponBtn">Buscar Cupom</button>
+            <p id="searchMessage" class="search-message hidden"></p>
+        </div>
+        <hr> <div id="found-coupon-container" class="found-coupon-container">
+            <p class="initial-message">Digite um código acima para buscar seu cupom.</p>
+        </div>
+        <div id="redeemModal" class="modal">
+            <div class="modal-content">
+                <span class="close-button">&times;</span>
+                <h2 id="modalCouponTitle"></h2>
+                <p id="modalCouponDescription"></p>
+                <h3>Itens do Cupom:</h3>
+                <ul id="modalCouponItems"></ul>
+
+                <p id="modalMessage" class="modal-message hidden"></p>
+
+                <button id="confirmRedeemBtn" class="btn primary">Confirmar Resgate</button>
+                <button id="cancelRedeemBtn" class="btn secondary">Cancelar</button>
+            </div>
+        </div>
+        </div>
+
+    <script type="module" src="client.js"></script>
+</body>
+</html>
